@@ -1,0 +1,18 @@
+.pagination {
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   margin-bottom: 2rem;
+}
+.pagination a {
+   background: var(--color-bg-700);
+   border: var(--border);
+}
+.pagination__prev img {
+   transform: rotate(180deg);
+}
+.disabled {
+   cursor: not-allowed;
+   pointer-events: none;
+   opacity: .5;
+}

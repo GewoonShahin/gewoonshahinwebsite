@@ -1,0 +1,62 @@
+/* BUTTONS */
+.btn {
+   transition: var(--transition);
+}
+.btn:hover {
+   border: var(--border-glow);
+}
+.btn--dark:hover {
+   border: var(--border);
+}
+
+/* CURSOR AURA */
+@media only screen and (min-width: 800px) {
+   .cursorAura {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+   }
+   .cursorAura::after {
+      content: "";
+      position: absolute;
+      top: calc(var(--y, 0) * 1px);
+      left: calc(var(--x, 0) * 1px);
+      transform: translate(-50%, -50%);  
+      width: 100%;
+      padding-bottom: 100%;
+      border-radius: 50%;
+      background: rgb(255,255,255);
+      background: radial-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0) 80%);
+      opacity: 0;
+      transition: opacity .2s ease-in-out;
+      pointer-events: none;
+   }
+   .cursorAura:hover::after {
+      opacity: 0.15;
+   }
+   .cursorAura--dim.cursorAura:hover::after {
+      opacity: .03;
+   }
+}
+
+.homepageLinks a {
+   transition: var(--transition);
+}
+.homepageLinks a:hover {
+   border-color: rgba(255,255,255,.5);
+}
+
+/* POSTCARDS */
+.backgroundCard img {
+   transition: var(--transition);
+}
+.postCard--latest:hover img, .backgroundCard:hover img {
+   opacity: .6;
+   transform: scale(1.05);
+}
+.postCard__readMore, .postCard h2 {transition: var(--transition);}
+.postCard:hover .postCard__readMore {
+   padding-right: 2.5rem;
+}
+.postCard:hover h2 {color: var(--color-primary);}
+.postCard--latest:hover h2 {color: white;}

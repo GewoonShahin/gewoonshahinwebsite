@@ -1,0 +1,206 @@
+.footer__main h2 {
+   font-size: 1rem;
+   margin-bottom: 1rem;
+}
+.footer__main {
+   padding: var(--spacing-m) 0;
+   background: var(--color-bg-700);
+   border-top: var(--border);
+   border-bottom: var(--border);
+   position: relative;
+   z-index: 1;
+}
+.footer__main .container {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: var(--spacing-l);
+}
+
+/* ABOUT */
+.footer__main_about::after {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   width: 50%;
+   height: 100%;
+   background: var(--color-bg-500);
+   border-right: var(--border);
+}
+.footer__main_about {
+   display: flex;
+}
+.footer__main_about a {
+   color: var(--color-primary);
+   border-bottom: var(--border);
+   border-width: 2px;
+   transition: var(--transition);
+}
+.footer__main_about a:hover {
+   border-color: var(--color-primary);
+}
+.footer__main_about_logo {
+   margin-right: 2rem;
+}
+.footer__main_about_logo img {
+   width: 4rem;
+}
+
+/* LINKS */
+.footer__main_links {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: var(--spacing-grid);
+}
+.footer__main_links a {
+   font-size: 1rem;
+   font-family: var(--font-family-text);
+   font-style: normal;
+   text-transform: capitalize;
+   line-height: inherit;
+   color: var(--color-text);
+   display: block;
+   margin-bottom: var(--spacing-xs);
+}
+.footer__main_links ul {
+   display: block;
+   gap: 0;
+}
+.footer__main_links li:last-of-type {
+   flex-grow: initial;
+   text-align: left;
+}
+.footer__main_links li:last-of-type a {
+   color: var(--color-text);
+   padding: 0;
+   margin: 0;
+   text-align: left;
+   border-radius: 0;
+   background: none;
+   border: 0;
+}
+.footer__main_links li:last-of-type a:hover {
+   background: none;
+   border: 0;
+}
+.footer__main_links .cursorAura::after {
+   display: none;
+}
+
+/* CREDITS */
+.footer__credits .container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-top: var(--spacing-m);
+   padding-bottom: var(--spacing-m);
+}
+.footer__credits_copyright h3 {
+   font-size: 1rem;
+}
+.footer__credits_theme span {
+   opacity: .3;
+}
+.footer__credits a {
+   opacity: .5;
+   color: var(--color-text);
+}
+
+/* BACK TO TOP */
+.footer__main_backToTop.iconBoxed {
+   display: none;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 800px) {
+   .footer__main {
+      padding: 3rem 0;
+   }
+   .footer__main .container {
+      gap: 6rem;
+   }
+
+   .footer__main_links {
+      grid-template-columns: repeat(2, 1fr);
+   }
+   .footer__main_links li:last-of-type a.btn {
+      display: block;
+   }
+}
+
+@media only screen and (max-width: 800px) {
+   .footer__main {
+      margin-top: 2rem;
+   }
+   .footer__main .container {
+      display: block;
+   }
+
+   /* ABOUT */
+   .footer__main_about {
+      position: relative;
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+   }
+   .footer__main_about::after {
+      width: calc(100% + 2rem);
+      height: calc(100% + 2rem);
+      border: 0;
+      border-bottom: var(--border);
+      top: -2rem;
+      left: -1rem;
+   }
+   .footer__main_about_logo {
+      position: absolute;
+      top: -4rem;
+   }
+
+   /* LINKS */
+   .footer__main_links li, 
+   .footer__main_links li:first-of-type, 
+   .footer__main_links li a {
+      border: 0;
+      padding: 0;
+   }
+   .footer__main_links ul {
+      display: flex;
+      flex-wrap: wrap;
+   }
+   .footer__main_links li {
+      margin-right: .5rem;
+   }
+   .footer__main_links li:last-of-type {margin-right: 0;}
+   .footer__main_links a::after {
+      content: "/";
+      font-weight: bold;
+      opacity: .3;
+      margin-left: .5rem;
+   }
+   .footer__main_links li:last-of-type a::after {
+      content: "";
+   }
+
+   /* CREDITS */
+   .footer__credits .container {
+      display: block;
+      text-align: center;
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+   }
+   .footer__credits_theme {
+      margin-top: var(--spacing-m);
+   }
+
+   /* BACK TO TOP */
+   .footer__main_backToTop.iconBoxed {
+      display: flex;
+      background: var(--color-primary);
+      border-radius: 100%;
+      margin: 1rem;
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      transform: rotate(-90deg);
+   }
+}

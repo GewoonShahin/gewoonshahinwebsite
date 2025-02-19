@@ -1,0 +1,87 @@
+.select {
+   margin-bottom: var(--spacing-l);
+}
+/* SELECTOR NAVIGATION */
+.selectorNav {
+   display: grid;
+   grid-auto-rows: min-content;
+   gap: .25rem;
+}
+.selector {
+   display: flex;
+   align-items: center;
+   gap: var(--spacing-grid);
+   padding: calc(var(--spacing-grid)/2);
+   border-radius: var(--border-radius);
+   box-sizing: border-box;
+   border: var(--border-width) solid transparent;
+}
+.selector__number {
+   background: var(--color-bg-700);
+   color: var(--color-primary);
+}
+.selector h2 {
+   font-size: 1rem;
+   color: var(--color-title);
+}
+/* SELECTOR NAVIGATION: hover states */
+.selector.backgroundCard:hover, .selector.selector--active.backgroundCard {
+   background: var(--color-bg-700);
+   border: var(--border);
+}
+.selector .backgroundCard__imageWrapper {
+   -webkit-mask-image: -webkit-gradient( linear, left top, right bottom, from(rgba(0, 0, 0, .3)), to(rgba(0, 0, 0, 0)));
+}
+.selector:hover .selector__number,
+.selector--active .selector__number {
+   background: var(--color-bg-900);
+}
+.selector.backgroundCard {background: transparent;}
+.selector.backgroundCard img {opacity: 0;}
+.selector.backgroundCard:hover img,
+.selector--active.backgroundCard img {
+   opacity: .7;
+}
+
+/* SELECTOR ARTICLE */
+.selectorArticles .article {
+   display: block;
+   position: relative;
+   border-radius: var(--border-radius);
+   background: var(--color-bg-700);
+   border: var(--border);
+   margin: 0;
+}
+.selectorArticles .article__body {
+   padding: var(--spacing-grid);
+}
+img.selectorArticles__featureImage {
+   display: block;
+   width: 100%;
+   max-height: 300px;
+   object-fit: cover;
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+}
+.selectorArticles .selectorArticles__title:first-child {
+   margin-top: 0;
+}
+.selectorArticles .article {
+   display: none;
+}
+
+/* ACTIVE ARTICLE */
+.selectorArticles .article--active {
+   display: block;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 800px) {
+   .selector__number {
+      width: 3rem;
+      height: 3rem;
+   }
+   .selectorNav {
+      margin-bottom: var(--spacing-grid);
+   }
+} 

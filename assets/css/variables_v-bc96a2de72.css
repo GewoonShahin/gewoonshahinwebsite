@@ -1,0 +1,54 @@
+:root {
+   --color-primary: var(--color-blue);
+   --color-secondary: var(--color-yellow);
+   --color-accent: var(--color-pink);
+
+   /* DARKMODE COLORS */
+   --color-bg-900: var(--color-black-900);
+   --color-bg-700: var(--color-black-700);
+   --color-bg-500: var(--color-black-500);
+   --color-border: var(--color-dark-border);
+   --color-text: var(--color-dark-text);
+   --color-title: var(--color-dark-title);
+
+   --font-size: 100%;
+   --font-family-title: 'Barlow', sans-serif;
+   --font-family-text: 'Rubik', sans-serif;
+
+   --border-width: 1px;
+   --border: var(--border-width) solid var(--color-border);
+   --border-hover: var(--border-width) solid #414160;
+   --border-glow: var(--border-width) solid rgba(32, 32, 32, 0.3);
+   --border-glow-hover: var(--border-width) solid rgba(255, 255, 255, .5);
+   --border-radius: .5rem;
+
+   --transition: all .2s ease-in-out;
+
+   --container-width: 1200px;
+
+   --spacing-xs: .5rem;
+   --spacing-s: 1rem;
+   --spacing-m: 2rem;
+   --spacing-l: 4rem;
+   --spacing-grid: 1.5rem;
+   --spacing-markup: 1.5rem;
+}
+
+@media only screen and (max-width: 800px) {
+   :root {
+      --spacing-s: .75rem;
+      --spacing-m: 1.5rem;
+      --spacing-l: 3rem;
+      --spacing-grid: 1rem;
+   }
+}
+
+/* LIGHTMODE COLORS */
+[data-darkmode="false"] {
+   --color-bg-900: var(--color-white-900);
+   --color-bg-700: var(--color-white-700);
+   --color-bg-500: var(--color-white-500);
+   --color-border: var(--color-light-border);
+   --color-text: var(--color-light-text);
+   --color-title: var(--color-light-title);
+}

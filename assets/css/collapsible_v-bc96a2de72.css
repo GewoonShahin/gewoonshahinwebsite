@@ -1,0 +1,71 @@
+.collapse {
+   margin-bottom: var(--spacing-l);
+}
+.collapsible {
+   background: var(--color-bg-700);
+   border: var(--border);
+   border-radius: var(--border-radius);
+   width: 100%;
+   counter-increment: col-counter;
+}
+.collapsible.article {
+   margin: 0 0 var(--spacing-grid) 0;
+}
+.collapsible.article:last-of-type {margin: 0}
+.collapsible__title {
+   display: flex;
+   align-items: center;
+   gap: var(--spacing-s);
+   padding: var(--spacing-s);
+   cursor: pointer;
+}
+.collapsible:nth-child(3n + 1) .collapsible__title_thumbnail { background: #5a6ec3;}
+.collapsible:nth-child(3n + 1) .collapsible__content ol li::before { color: var(--color-primary);}
+.collapsible:nth-child(3n + 2) .collapsible__title_thumbnail { background: var(--color-secondary);}
+.collapsible:nth-child(3n + 2) .collapsible__content ol li::before { color: var(--color-secondary);}
+.collapsible:nth-child(3n) .collapsible__title_thumbnail { background: var(--color-accent);}
+.collapsible:nth-child(3n) .collapsible__content ol li::before { color: var(--color-accent);}
+.collapsible__title_icon {
+   flex-grow: 2;
+   text-align: right;
+}
+.collapsible__title_icon img {
+   width: 1rem;
+   padding: 1rem;
+   border-radius: 50%;
+   background: rgba(0,0,0,.15);
+   transition: rotate .3s;
+}
+.collapsible__title_icon.open img {transform: rotate(-90deg);}
+
+.collapsible__content {
+   overflow: hidden;
+   max-height: 0;
+   padding: 0;
+}
+.collapsible__content.open {
+   border-top: var(--border);
+   padding: var(--spacing-grid);
+   max-height: 100%;
+}
+.collapsible__content > *:last-child {
+   margin-bottom: 0;
+}
+.collapsible__content ol li {
+   padding: 0;
+   margin-bottom: 1rem;
+}
+.collapsible__content ol li:last-child {
+   margin-bottom: 0;
+}
+.collapsible__content ol li:first-line {
+   font-family: var(--font-family-title);
+   font-style: italic;
+   text-transform: uppercase;
+   color: var(--color-title);
+}
+.collapsible__content ol li::before {
+   content: counter(col-counter) "." counter(ol-counter);
+   position: initial;
+   margin-right: 1rem;
+}

@@ -1,0 +1,209 @@
+/* GLOBAL SETTINGS & RESET */
+* {
+   margin: 0;
+   padding: 0;
+   text-decoration: none;
+}
+body, html {
+   -webkit-font-smoothing: antialiased;
+   font-family: var(--font-family-text);
+   font-size: 100%;
+   color: var(--color-text);
+   background: var(--color-bg-900);
+   overflow-x: hidden;
+}
+/* Sticky footer */
+body {
+   height: 100vh;
+   display: grid;
+   grid-template-rows: auto 1fr auto;
+}
+button {
+   background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+/* FONT */
+h1, h2, h3, h4, h5, h6 {
+   font-family: var(--font-family-title);
+   font-style: italic;
+   line-height: 1em;
+   text-transform: uppercase;
+   color: var(--color-title);
+}
+h1 {
+   font-size: 3rem;
+}
+h2 {
+   font-size: 2rem;
+}
+h3 {
+   font-size: 1.5rem;
+}
+h4 {
+   font-size: 1rem;
+}
+p, ul, ol {
+   line-height: 1.5em;
+}
+a {
+   color: var(--color-text);
+}
+.text--title {
+   font-family: var(--font-family-title);
+   font-style: italic;
+   line-height: 1em;
+   text-transform: uppercase;
+   color: var(--color-title);
+   font-size: 1.25rem;
+}
+.text--small {
+   font-size: 1rem;
+   opacity: .5;
+}
+.text--ellipsis {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 5; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+/* OTHER */
+img {
+   display: inline-block;
+}
+/* CONTAINER */
+.container {
+   max-width: var(--container-width);
+   margin: 0 auto;
+   padding: 0 var(--spacing-s);
+}
+
+/* MODIFIERS */
+.unselectable {
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+/* ELEMENTS */
+.iconBoxed {
+   display: flex;
+   width: 3.5rem;
+   height: 3.5rem;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   border-radius: var(--border-radius);
+}
+.iconBoxed--rounded {
+   border-radius: 100%;
+}
+.iconBoxed img, .iconBoxed svg {
+   display: inline-block;
+   max-width: 2rem;
+   max-height: 2rem;
+   vertical-align: middle;
+}
+
+.btn {
+   font-family: var(--font-family-title);
+   font-style: italic;
+   font-size: 1.25rem;
+   text-transform: uppercase;
+   display: flex;
+   align-items: center;
+   gap: var(--spacing-grid);
+   padding: .75rem 1.5rem;
+   border-radius: 3rem;
+   border: var(--border-width) solid transparent;
+}
+.btn--primary {
+   color: white;
+   background: var(--color-primary);
+}
+.btn--dark {
+   color: white;
+   background: var(--color-bg-900);
+}
+
+.backgroundCard {
+   border-radius: var(--border-radius);
+   border: var(--border);
+   background: var(--color-bg-700);
+   overflow: hidden;
+   box-sizing: border-box;
+   position: relative;
+   z-index: 1;
+   padding: 2rem 0;
+}
+.backgroundCard h2 {color: white;}
+.backgroundCard--primary {
+   border-color: var(--color-primary);
+   background: var(--color-primary);
+}
+.backgroundCard--secondary {
+   border-color: var(--color-secondary);
+   background: var(--color-secondary);
+}
+.backgroundCard--alignRight {text-align: right;}
+.backgroundCard--hidden {
+   background: initial;
+}
+.backgroundCard--hidden img {
+   display: none;
+}
+.backgroundCard a {
+   color: white;
+   display: grid;
+   grid-template-rows: auto 1fr;
+   gap: 2rem;
+   height: 100%;
+}
+.backgroundCard img.backgroundCard__image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.backgroundCard__imageWrapper {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   -webkit-mask-image: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .7)), to(rgba(0, 0, 0, 0)));
+}
+.backgroundCard__tag {
+   display: inline-block;
+   font-size: .9rem;
+   background: rgba(0,0,0,.3);
+   padding: .25rem 1rem;
+}
+.backgroundCard__tag--left {
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0;
+   padding-left: 2rem;
+}
+.backgroundCard__tag--right {
+   border-top-right-radius: 0;
+   border-bottom-right-radius: 0;
+   padding-right: 2rem;
+}
+.backgroundCard__title {
+   margin-top: auto;
+   padding: 0 2rem;
+}
+
+/* MCM */
+.mcm-verify {content: "ddjdaniel (93292) [82429]"}
+
+/* GHOST PORTAL */
+#ghost-portal-root {
+   display: none;
+}

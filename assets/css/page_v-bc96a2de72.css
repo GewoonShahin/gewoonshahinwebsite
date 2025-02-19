@@ -1,0 +1,12 @@
+/* MEDIA QUERIES */
+@media only screen and (min-width: 800px) {
+   .pageContainer {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1.5rem;
+   }
+   .page header h1 {
+      position: sticky;
+      top: 2rem;
+   }
+}

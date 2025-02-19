@@ -1,0 +1,275 @@
+header.siteHeader {
+   position: relative;
+   z-index: 99;
+}
+/* SOCIAL WRAPPER */
+.header__socialWrapper {
+   background: var(--color-bg-700);
+   padding: var(--spacing-xs) 0;
+}
+.header__socialWrapper .container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+#darkmodeToggle {
+   font-family: var(--font-family-title);
+   font-style: italic;
+   color: var(--color-title);
+   text-transform: uppercase;
+}
+
+/* LOGO WRAPPER */
+.header__logoWrapper {
+   background: var(--color-bg-500);
+   border: var(--border);
+   border-left: 0;
+   border-right: 0;
+   padding: var(--spacing-m) 0;
+}
+.header__logoWrapper .container {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   justify-content: space-between;
+   align-items: center;
+}
+.header__logoWrapper_externalLink {
+   display: flex;
+   align-items: center;
+   gap: var(--spacing-grid);
+}
+.header__logoWrapper_externalLink .text--title {
+   margin-bottom: var(--spacing-xs);
+}
+.header__logoWrapper_server {
+   text-align: right;
+   justify-content: flex-end;
+}
+.header__logoWrapper_server .text--title {color: var(--store-color-secondary);}
+.header__logoWrapper_server .iconBoxed {background: var(--store-color-primary);}
+.header__logoWrapper_discord {
+   text-align: left;
+}
+.header__logoWrapper_discord .text--title {color: var(--store-color-secondary);}
+.header__logoWrapper_discord .iconBoxed {background: var(--store-color-primary);}
+.header__logoWrapper_logo {
+   width: 10rem;
+   height: 100%;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+}
+.header__logoWrapper_logo img {
+   position: absolute;
+   width: 10rem;
+   height: auto;
+   z-index: 2;
+}
+.header__logoWrapper_logoBlurred {
+   filter: blur(4px);
+   -webkit-filter: blur(4px);
+   opacity: .1;
+   position: absolute;
+   width: 20rem;
+   height: 20rem;
+   transform: translate(-50%, -50%);
+   left: 50%;
+   top: 5rem;
+   z-index: 1;
+   animation: blurGlow 5s ease-in-out infinite;
+}
+.header__logoWrapper_mobileMenu {
+   background: rgba(0,0,0,.15);
+}
+.header__logoWrapper_mobileMenu, .header__mobileNav {
+   display: none;
+}
+
+/* NAVWRAPPER */
+.header__navWrapper {
+   background: var(--color-bg-700);
+   border-bottom: var(--border);
+   padding: var(--spacing-s) 0;
+   position: relative;
+   z-index: 1;
+}
+
+/* COPIED TO CLIPBOARD POPUP */
+.popup {
+   position: absolute;
+   transform: translate(-50%,-50%);
+   left: 50%;
+   top: 50%;
+   z-index: 101;
+   display: none;
+}
+.popupBack {
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: black;
+   opacity: .6;
+   width: 100%;
+   height: 100%;
+   z-index: 100;
+   display: none;
+}
+.popup__container {
+   background: var(--color-bg-500);
+   padding: var(--spacing-grid);
+   border: var(--border);
+   border-radius: var(--border-radius);
+   text-align: center;
+   position: relative;
+   z-index: 1;
+   min-width: 40ch;
+   height: auto;
+   overflow: hidden;
+}
+.popup h2 {
+   display: block;
+   padding: var(--spacing-s);
+   background: var(--color-bg-900);
+   border-radius: var(--border-radius);
+}
+.popup button {
+   display: inline-block;
+   margin: var(--spacing-grid) auto 0 auto;
+}
+.popup__logoBackground {
+   display: block;
+   height: 150%;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   top: 50%;
+   left: 50%;
+   filter: grayscale(100%);
+   z-index: -1;
+   opacity: .2;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 800px) {
+   /* LOGO WRAPPER */
+   .header__logoWrapper {
+      padding: 0;
+   }
+   .header__logoWrapper .container {
+      padding: 0;
+      grid-template-columns: repeat(2, 1fr);
+   }
+   .header__logoWrapper_server {order: 3;}
+   .header__logoWrapper_logo {order: 1;}
+   .header__logoWrapper_discord {order: 4;}
+   .header__logoWrapper_mobileMenu {order: 2;}
+
+   .header__logoWrapper_server h2, 
+   .header__logoWrapper_server p, 
+   .header__logoWrapper_discord h2, 
+   .header__logoWrapper_discord p, 
+   .header__logoWrapper_logoBlurred,
+   .header__socialWrapper,
+   .header__navWrapper {
+      display: none;
+   }
+   .header__logoWrapper_mobileMenu {
+      display: flex;
+      justify-self: flex-end;
+      margin-right: 1rem;
+   }
+   .header__logoWrapper_discord, 
+   .header__logoWrapper_server {
+      display: block;
+   }
+
+   .header__logoWrapper_logo {
+      width: 6rem;
+      margin: 0;
+   }
+   .header__logoWrapper_logo img {
+      width: 6rem;
+      position: initial;
+      margin: .5rem;
+   }
+   
+   .header__logoWrapper .iconBoxed {
+      display: block;
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      border: var(--border-glow);
+      padding: var(--spacing-s) 0;
+   }
+   .header__logoWrapper .iconBoxed svg {
+      width: 2rem;
+      height: 2rem;
+      opacity: .35;
+   }
+   .header__logoWrapper .iconBoxed svg path {
+      fill: black;
+   }
+
+   /* MOBILE NAV */
+   .header__mobileNav {
+      background: var(--color-bg-500);
+      border: var(--border);
+      width: 80%;
+      height: 100%;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      right: 0;
+      transition: var(--transition);
+   }
+   .header__mobileNav .iconBoxed {
+      background: rgba(0,0,0,.15);
+      width: 3rem;
+      height: 3rem;
+      margin: 1rem;
+   }
+
+   /* COPIED TO CLIPBOARD POPUP */
+   .popup__container {
+      min-width: initial;
+      width: 100%;
+      transform: translate(-50%);
+      left: 50%;
+   }
+}
+@media only screen and (min-width: 1200px) {
+   .header__logoWrapper_externalLink * {transition: var(--transition);}
+   .header__logoWrapper_externalLink:hover .iconBoxed {
+      transform: scale(.975);
+   }
+   .header__logoWrapper_externalLink:hover h2 {
+      margin-left: .5rem;
+      margin-right: .5rem;
+   }
+   .header__logoWrapper_externalLink:hover p {
+      margin-left: .75rem;
+      margin-right: .75rem;
+   }
+   #serverCount, #discordCount {
+      font-family: var(--font-family-title);
+      font-style: italic;
+      color: var(--color-title);
+      background: var(--color-bg-700);
+      border-radius: 1rem;
+      padding: .1rem .5rem;
+      line-height: .5rem;
+      border: var(--border);
+   }
+}
+
+/* KEYFRAMES */
+@keyframes blurGlow {
+   0% {
+      opacity: .1;
+   }
+   50% {
+      opacity: .2;
+   }
+   0% {
+      opacity: .1;
+   }
+}
